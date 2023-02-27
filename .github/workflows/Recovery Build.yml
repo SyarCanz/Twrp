@@ -87,7 +87,7 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.4
       with:
           ssh-private-key: |
-              ${{ secrets.SSH_PRIVATE_KEY }}
+              ${{ secrets.SSH_PRIVATE_KEY2 }}
 
     - name: Install repo
       run: |
@@ -101,8 +101,8 @@ jobs:
         mkdir workspace
         cd workspace
         echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
-        git config --global user.name "Nico170420"
-        git config --global user.email "b170420nc@gmail.com"
+        git config --global user.name "damnthefall"
+        git config --global user.email "derrick.croteau@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
       id: pwd
           
